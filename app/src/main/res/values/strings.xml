@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Rake-Android-Example</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="btnFlush">Flush Logs</string>
+    <string name="btnTrack">Track a Log</string>
+    <string name="action_settings">Settings</string>
+</resources>
