@@ -1,7 +1,7 @@
 
 ## Rake Android Example
 
-[Rake-Android](https://github.com/sentinel-rake/rake-android) 의 예제입니다. **Rake API** 등 더 자세한 내용은 [Rake Document: Android](https://github.com/sentinel-rake/rake-document/wiki/Rake-Android) 를 참조해주세요.
+[Rake-Android](https://github.com/skpdi/rake-android) 의 예제입니다. **Rake API** 등 더 자세한 내용은 [Rake Document: Android](https://github.com/skpdi/rake-document/wiki/Rake-Android) 를 참조해주세요.
 
 - `MainActivity` 는 `app/src/main/java/com/skp/di/sentinel/rake_android_example` 에 있습니다.
 - **Rake** 및 **Sentinel-Shuttle** 라이브러리는 `app/libs` 에 위치해 있습니다.
@@ -87,4 +87,4 @@ public class MainActivity extends ActionBarActivity {
 
 ### Screenshot
 
-![](https://raw.githubusercontent.com/sentinel-rake/rake-android-example/master/screenshots/image01.jpeg)
+![](https://raw.githubusercontent.com/skpdi/rake-android-example/master/screenshots/image01.jpeg)
