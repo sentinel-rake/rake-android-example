@@ -1,4 +1,4 @@
-package com.skp.di.sentinel.rake_android_example.gcm;
+package com.skp.di.sentinel.rake_android_example.gcm.config;
 
 public class GcmConfig {
     public static final String SENDER_ID = "";

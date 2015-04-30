@@ -6,7 +6,7 @@ import android.util.Log;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.skp.di.sentinel.rake_android_example.gcm.GcmConfig;
+import com.skp.di.sentinel.rake_android_example.gcm.config.GcmConfig;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

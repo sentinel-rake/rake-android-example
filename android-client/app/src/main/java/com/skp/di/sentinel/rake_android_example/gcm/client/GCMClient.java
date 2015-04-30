@@ -8,7 +8,7 @@ import android.util.Log;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
-import com.skp.di.sentinel.rake_android_example.gcm.GcmConfig;
+import com.skp.di.sentinel.rake_android_example.gcm.config.GcmConfig;
 
 import java.io.IOException;
 
