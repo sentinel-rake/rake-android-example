@@ -21,6 +21,16 @@
             android:layout_width="fill_parent"
             android:text="@string/btnTrack"
             android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnGCMRegisterDevice"
+            android:layout_width="fill_parent"
+            android:text="@string/btnGCMRegisterDevice"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnGCMPushMessage"
+            android:layout_width="fill_parent"
+            android:text="@string/btnGCMPushMessage"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </RelativeLayout>

@@ -1,0 +1,14 @@
+{
+  "name": "gcm-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-gcm": "^0.9.15"
+  }
+}
