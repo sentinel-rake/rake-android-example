@@ -4,5 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="btnFlush">Flush Logs</string>
     <string name="btnTrack">Track a Log</string>
+    <string name="btnGCMRegisterDevice">GCM Client: Register Device</string>
+    <string name="btnGCMPushMessage">GCM Server: Push Message</string>
     <string name="action_settings">Settings</string>
 </resources>

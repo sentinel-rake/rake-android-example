@@ -1,7 +1,8 @@
 package com.skp.di.sentinel.rake_android_example;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,20 +10,29 @@ import android.view.View;
 import android.widget.Button;
 
 import com.rake.android.rkmetrics.RakeAPI;
+import com.skp.di.sentinel.rake_android_example.gcm.client.GcmClient;
+import com.skp.di.sentinel.rake_android_example.gcm.server.GcmContent;
+import com.skp.di.sentinel.rake_android_example.gcm.server.GcmServer;
 import com.skplanet.pdp.sentinel.shuttle.AppSampleSentinelShuttle;
 
 
 public class MainActivity extends ActionBarActivity {
-    // Important: Setting your rake token
-    private final static String rakeToken = "your rake token";
-    private final static Boolean willFlushIntoDevServer = true; // is dev environment or not?
+    private final static String TAG = "RAKE MAIN ACTIVITY";
+
+    // variables for Rake
     private RakeAPI rake = null;
-    // end member variables
+
+
+    // variables for GCM
+    private Context context = null;
+    private GcmClient gcmClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.context = getApplicationContext();
 
         // initialize Rake instance
         RakeAPI.setDebug(true); // print debug messages. Default: false
@@ -35,8 +45,7 @@ public class MainActivity extends ActionBarActivity {
                   Also if this argument is true, every log will be sent to dev server instantly
                   without saving into SQLite
          */
-        rake = RakeAPI.getInstance(this, rakeToken, willFlushIntoDevServer);
-
+        rake = RakeAPI.getInstance(this, RakeConfig.TOKEN, RakeConfig.IS_DEV_MODE);
 
         // button to track a log.
         Button btnTrack = (Button) findViewById(R.id.btnTrack);
@@ -67,6 +76,30 @@ public class MainActivity extends ActionBarActivity {
                 rake.flush();
             }
         });
+
+        // buttons for GCM
+        Button btnGCMRegisterDevice = (Button) findViewById(R.id.btnGCMRegisterDevice);
+        Button btnGCMPushMessage = (Button) findViewById(R.id.btnGCMPushMessage);
+
+        gcmClient = new GcmClient(this, context);
+
+        btnGCMRegisterDevice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gcmClient.registerDevice();
+            }
+        });
+
+        btnGCMPushMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GcmContent content = new GcmContent(gcmClient.getRegistrationID());
+                content.createData("title", "Hello, GCM!");
+                content.createData("message", "This is first GCM push message");
+                GcmServer.postMessageToGCM(content);
+            }
+        });
+
     }
 
     @Override
